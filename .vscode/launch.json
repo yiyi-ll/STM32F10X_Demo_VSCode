@@ -1,0 +1,43 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "./Obj/STM32F10X.elf",
+            "name": "Cortex Debug",
+            "request": "launch",
+            "type": "cortex-debug",
+            "svdFile": "C:\\Users\\LL\\.vscode\\extensions\\marus25.cortex-debug-dp-stm32f1-1.0.0\\data\\STM32F103xx.svd",
+            "servertype": "openocd",
+            "configFiles": [  
+                "./Debugger/jlink_swd.cfg",
+                "./Debugger/stm32f1x.cfg"
+            ]
+        },
+        {
+            "name": "(gdb) 启动",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Scr/a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
